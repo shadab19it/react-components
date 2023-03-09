@@ -1,0 +1,1 @@
+const BubblyNav = () => <div></div>;

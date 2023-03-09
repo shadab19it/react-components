@@ -12,23 +12,23 @@ const HeadStream = () => (
     <div>
       <div className='stream-container'>
         <div className='circle' style={{ backgroundColor: "orange" }}></div>
-        <img src='/img/sections/hero/coder_4.jpeg' alt='' />
+        <img src='/img/sections/hero/HeadStream/coder_4.jpeg' alt='' />
       </div>
       <div className='stream-container'>
-        <img src='/img/sections/hero/coder_5.png' alt='' />
+        <img src='/img/sections/hero/HeadStream/coder_5.png' alt='' />
         <div className='cylinder' style={{ backgroundColor: "orange" }}></div>
       </div>
       <div className='stream-container'>
         <div className='cylinder' style={{ backgroundColor: "#628aec" }}></div>
-        <img src='/img/sections/hero/coder_3.jpeg' alt='' />
-        <img src='/img/sections/hero/coder_1.jpeg' alt='' />
+        <img src='/img/sections/hero/HeadStream/coder_3.jpeg' alt='' />
+        <img src='/img/sections/hero/HeadStream/coder_1.jpeg' alt='' />
       </div>
       <div className='stream-container'>
-        <img src='/img/sections/hero/woman.jpeg' alt='' />
+        <img src='/img/sections/hero/HeadStream/woman.jpeg' alt='' />
         <div className='cylinder' style={{ backgroundColor: "#ea7e60" }}></div>
       </div>
       <div className='stream-container'>
-        <img src='/img/sections/hero/coding.jpeg' alt='' />
+        <img src='/img/sections/hero/HeadStream/coding.jpeg' alt='' />
       </div>
     </div>
   </section>

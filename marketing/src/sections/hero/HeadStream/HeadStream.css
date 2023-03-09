@@ -38,6 +38,7 @@
   height: 200px;
   border-radius: 50px;
   margin-bottom: 10px;
+  background-color: #000;
 }
 
 .stream-container div.circle {
@@ -50,7 +51,48 @@
 .stream-container img {
   width: 100px;
   height: 200px;
+  cursor: pointer;
   border-radius: 50px;
   margin-bottom: 10px;
   object-fit: cover;
+  filter: brightness(50%);
+  transition: 0.5s all;
+}
+
+.stream-container img:hover {
+  filter: brightness(100%);
+}
+
+.section-headstream button {
+  -webkit-appearance: none;
+  background: linear-gradient(to right, #748bde 0%, #fceeb5 50%, #ee786e 100%);
+  background-size: 500%;
+  border: none;
+  border-radius: 5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  color: #fff;
+  cursor: pointer;
+  height: 3rem;
+  letter-spacing: 0.05em;
+  width: 10rem;
+}
+
+button:hover {
+  animation-name: gradient;
+  -webkit-animation-name: gradient;
+  animation-duration: 2s;
+  -webkit-animation-duration: s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100%;
+  }
 }
