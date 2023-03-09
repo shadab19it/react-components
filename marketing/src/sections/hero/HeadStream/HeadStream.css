@@ -1,0 +1,56 @@
+.section-headstream {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.section-headstream h1 {
+  font-size: 3rem;
+}
+
+.section-headstream p {
+  font-size: 1.5rem;
+  color: #505050;
+}
+
+.section-headstream button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #4ea5e0;
+}
+
+.section-headstream > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(5, 100px);
+  place-items: center;
+  gap: 20px;
+}
+
+.stream-container div.cylinder {
+  width: 100px;
+  height: 200px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+
+.stream-container div.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.stream-container img {
+  width: 100px;
+  height: 200px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
