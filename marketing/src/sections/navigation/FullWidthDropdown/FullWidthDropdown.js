@@ -1,5 +1,7 @@
 import React from "react";
 import "./FullWidthDropdown.css";
+import CaretRight from "../../../assets/svg/caret-right.svg";
+import PlusIcon from "../../../assets/svg/plus.svg";
 
 const DropdownFooter = () => {
   return (
@@ -19,7 +21,10 @@ const FeaturedCard = () => {
       <div className='card-content'>
         <div className='tag'>GUID</div>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, vel!</p>
-        <button className='read-more-btn'>Read more </button>
+        <button className='read-more-btn'>
+          <span> Read more </span>
+          <img src={CaretRight} alt='hundred.dev' />
+        </button>
       </div>
     </div>
   );
@@ -67,13 +72,34 @@ const SolutionsDropdown = () => {
       <div className='left-content'>
         <div className='title'>SOLUTIONS FOR</div>
         <div className='solutions-links'>
-          <a href=''>Resturants</a>
-          <a href=''>Hospitality</a>
-          <a href=''>Automotive</a>
-          <a href=''>Healthcare</a>
-          <a href=''>Manufacturing</a>
-          <a href=''>Warehousing</a>
-          <a href=''>Retail</a>
+          <a href='#'>
+            <span>Resturants</span>
+            <img src={CaretRight} alt='' />
+          </a>
+          <a href='#'>
+            <span>Hospitality</span>
+            <img src={CaretRight} alt='' />
+          </a>
+          <a href='#'>
+            <span>Automotive</span>
+            <img src={CaretRight} alt='' />
+          </a>
+          <a href='#'>
+            <span>Healthcare</span>
+            <img src={CaretRight} alt='' />
+          </a>
+          <a href='#'>
+            <span>Manufacturing</span>
+            <img src={CaretRight} alt='' />
+          </a>
+          <a href='#'>
+            <span>Warehousing</span>
+            <img src={CaretRight} alt='' />
+          </a>
+          <a href='#'>
+            <span>Retail</span>
+            <img src={CaretRight} alt='' />
+          </a>
         </div>
       </div>
       <div className='right-content'>
@@ -94,20 +120,47 @@ const ResourcesDropdown = () => {
         <div>
           <div className='title'>LEARN</div>
           <div className='resources-links'>
-            <a href=''>Blog</a>
-            <a href=''>Webinar</a>
-            <a href=''>Guides</a>
-            <a href=''>Podcast</a>
-            <a href=''>On the Clock Community</a>
+            <a href='#'>
+              <span>Blog</span>
+              <img src={CaretRight} alt='' />
+            </a>
+            <a href='#'>
+              <span>Webinar</span>
+              <img src={CaretRight} alt='' />
+            </a>
+            <a href='#'>
+              <span>Guides</span>
+              <img src={CaretRight} alt='' />
+            </a>
+            <a href='#'>
+              <span>Podcast</span>
+              <img src={CaretRight} alt='' />
+            </a>
+            <a href='#'>
+              <span> On the Clock Community</span>
+              <img src={CaretRight} alt='' />
+            </a>
           </div>
         </div>
         <div>
           <div className='title'>CONNECT</div>
           <div className='resources-links'>
-            <a href=''>Newsroom</a>
-            <a href=''>Contact Us</a>
-            <a href=''>Docs & Help Center</a>
-            <a href=''>Investors</a>
+            <a href='#'>
+              <span>Newsroom</span>
+              <img src={CaretRight} alt='' />
+            </a>
+            <a href='#'>
+              <span>Contact Us</span>
+              <img src={CaretRight} alt='' />
+            </a>
+            <a href='#'>
+              <span>Docs & Help Center</span>
+              <img src={CaretRight} alt='' />
+            </a>
+            <a href='#'>
+              <span>Investors</span>
+              <img src={CaretRight} alt='' />
+            </a>
           </div>
         </div>
       </div>
@@ -162,43 +215,88 @@ const FullWidthDropdown = () => {
     isOpen: false,
     id: "",
   });
+  const [isMobileTrigger, setMobileTrigger] = React.useState(false);
 
   const onMouseEnter = (id) => {
     setDropdown({ isOpen: true, id: id });
+  };
+  const onClickExpand = (id) => {
+    if (isDropdown.isOpen) {
+      setDropdown({ isOpen: false, id: "" });
+    } else {
+      setDropdown({ isOpen: true, id: id });
+    }
   };
 
   const onMouseLeave = () => {
     setDropdown({ isOpen: false, id: "" });
   };
+  const onClickHamburger = () => {
+    setMobileTrigger(!isMobileTrigger);
+  };
   return (
-    <div className='section-navbar'>
-      <div className='componay-logo'>
-        <img src='https://d3v0px0pttie1i.cloudfront.net/uploads/user/logo/25274289/9426278c.png' alt='hundred.dev' />
+    <>
+      <div className='section-navbar'>
+        <div className='componay-logo'>
+          <img src='https://d3v0px0pttie1i.cloudfront.net/uploads/user/logo/25274289/9426278c.png' alt='hundred.dev' />
+        </div>
+        <ul className='nav-links'>
+          {navLinks.map((link, i) => {
+            if (link.link) {
+              return (
+                <li key={i} className='link'>
+                  <a href=''>{link.linkName}</a>
+                </li>
+              );
+            } else {
+              return (
+                <li key={i} className={`link link-${i}`} onMouseEnter={() => onMouseEnter(link.id)} onMouseLeave={onMouseLeave}>
+                  <span>{link.linkName}</span>
+                  {/* <div className={`dropdown-menu `}>{link.dropdown}</div> */}
+
+                  {link?.dropdown && (
+                    <div className={`dropdown-menu ${isDropdown.id === link.id ? "dropdown-open" : "dropdown-close"}`}>{link.dropdown}</div>
+                  )}
+                </li>
+              );
+            }
+          })}
+          <hr />
+        </ul>
+        <div className='actions-btns'>
+          <button className='signin-btn'>Sign in</button>
+          <button className='contact-sales-btn'>Contact sales</button>
+        </div>
+
+        <div onClick={onClickHamburger} className={`hamburger ${isMobileTrigger ? "hamburger-open" : "hamburger-close"}`}>
+          <div className='slice slice-1'></div>
+          <div className='slice slice-2'></div>
+          <div className='slice slice-3'></div>
+        </div>
       </div>
-      <ul className='nav-links'>
+
+      <ul className={`mobile-nav-links nav-links ${isMobileTrigger ? "mobile-menu-open" : "mobile-menu-close"}`}>
         {navLinks.map((link, i) => {
-          if (link.link) {
-            return (
-              <li key={i} className='link'>
-                <a href=''>{link.linkName}</a>
-              </li>
-            );
-          } else {
-            return (
-              <li key={i} className='link' onMouseEnter={() => onMouseEnter(link.id)} onMouseLeave={onMouseLeave}>
+          return (
+            <li key={i} className={`link link-${i}`} onClick={() => onClickExpand(link.id)}>
+              <div>
                 <span>{link.linkName}</span>
-                {/* <div className='dropdown-menu'>{link.dropdown}</div> */}
-                {link?.dropdown && isDropdown && isDropdown.id === link.id && <div className='dropdown-menu'>{link.dropdown}</div>}
-              </li>
-            );
-          }
+                {link.dropdown && (
+                  <span>
+                    <img src={PlusIcon} alt='plus' />
+                  </span>
+                )}
+              </div>
+              {link?.dropdown && (
+                <div className={`dropdown-menu ${isDropdown.id === link.id ? "mobile-submenu-open" : "mobile-submenu-close"}`}>
+                  {link.dropdown}
+                </div>
+              )}
+            </li>
+          );
         })}
       </ul>
-      <div className='actions-btns'>
-        <button className='signin-btn'>Sign in</button>
-        <button className='contact-sales-btn'>Contact sales</button>
-      </div>
-    </div>
+    </>
   );
 };
 
