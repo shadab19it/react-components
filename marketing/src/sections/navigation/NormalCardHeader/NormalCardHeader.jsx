@@ -1,5 +1,5 @@
 import React from "react";
-import "./SpotAINav.css";
+import "./NormalCardHeader.css";
 
 const NavChildrenOne = () => {
   return (
@@ -141,7 +141,7 @@ const navLinks = [
   },
 ];
 
-const SpotAINav = () => {
+const NormalCardHeader = () => {
   const [isMobileTrigger, setMobileTrigger] = React.useState(false);
   const [isSubmenu, setSubmenu] = React.useState({
     isOpen: false,
@@ -195,10 +195,10 @@ const SpotAINav = () => {
             <a href={link.link} key={i}>
               <div> {link.linkName}</div>
               {link.dropdown && (!isSubmenu.isOpen || isSubmenu.id != link.id) && (isSubmenu.isOpen || isSubmenu.id !== link.id) && (
-                <img onClick={() => onExpandSubmenu(link.id)} src='./img/svg/plus.svg' alt='Iocn' />
+                <img onClick={() => onExpandSubmenu(link.id)} src='./img/sections/header/plus.svg' alt='Iocn' />
               )}
               {link.dropdown && isSubmenu.isOpen && isSubmenu.id === link.id && (
-                <img onClick={() => onExpandSubmenu(link.id)} src='./img/svg/minus.svg' alt='Iocn' />
+                <img onClick={() => onExpandSubmenu(link.id)} src='./img/sections/header/minus.svg' alt='Iocn' />
               )}
               {isSubmenu.id === link.id && (
                 <div className={`submenu ${isSubmenu.isOpen ? "submenu-open" : "submenu-close"}`}> {link.dropdown && link.dropdown}</div>
@@ -216,4 +216,4 @@ const SpotAINav = () => {
   );
 };
 
-export default SpotAINav;
+export default NormalCardHeader;

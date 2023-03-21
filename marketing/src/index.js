@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import SpotAINav from "./sections/navigation/SpotAINav/SpotAINav";
+import NormalCardHeader from "./sections/navigation/NormalCardHeader/NormalCardHeader";
 import FullWidthDropdown from "./sections/navigation/FullWidthDropdown/FullWidthDropdown";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <SpotAINav />
+    <NormalCardHeader />
   </React.StrictMode>
 );
 
