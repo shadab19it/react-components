@@ -1,16 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import AlloyNav from "./sections/navigation/AlloyNav/AlloyNav";
-import HeadStream from "./sections/hero/HeadStream/HeadStream";
-import BlueSimple from "./sections/navigation/Blue-Simple/Blue-Simple";
+import BlueSimple from "./sections/navigation/BlueSimple/BlueSimple";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-
+    <BlueSimple />
   </React.StrictMode>
 );
 
