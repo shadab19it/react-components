@@ -29,7 +29,7 @@ header > .header-content {
 
 /* company logo */
 header .header-content > .company-logo {
-  flex-basis: 10%;
+  flex-basis: 20%;
 }
 header .header-content > .company-logo img {
   width: 180px;
