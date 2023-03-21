@@ -10,6 +10,7 @@
   box-shadow: var(--box-shadow);
   z-index: 1000;
   position: relative;
+  background: #fff;
 }
 
 /* compnay-logo */
@@ -456,5 +457,36 @@
 
   .mobile-nav-links {
     display: grid;
+  }
+
+  .mobile-nav-links .actions-btns {
+    display: flex;
+    justify-content: center;
+    gap: 0 20px;
+    padding: 20px 30px;
+  }
+
+  .mobile-nav-links .actions-btns button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .mobile-nav-links .actions-btns .signin-btn {
+    background: none;
+    color: #fc8936;
+  }
+  .mobile-nav-links .actions-btns .contact-sales-btn {
+    color: #fff;
+    background-image: linear-gradient(90deg, #eb4242, #fc8936);
+    padding: 8px 15px;
+    border-radius: 4px;
+  }
+  .mobile-nav-links .actions-btns .contact-sales-btn:hover {
+    transform: translateY(-1px);
+    border-color: #fc8936;
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
   }
 }

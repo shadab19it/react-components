@@ -1,7 +1,5 @@
 import React from "react";
 import "./FullWidthDropdown.css";
-import CaretRight from "../../../assets/svg/caret-right.svg";
-import PlusIcon from "../../../assets/svg/plus.svg";
 
 const DropdownFooter = () => {
   return (
@@ -23,7 +21,7 @@ const FeaturedCard = () => {
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, vel!</p>
         <button className='read-more-btn'>
           <span> Read more </span>
-          <img src={CaretRight} alt='hundred.dev' />
+          <img src='./img/svg/caret-right.svg' alt='hundred.dev' />
         </button>
       </div>
     </div>
@@ -74,31 +72,31 @@ const SolutionsDropdown = () => {
         <div className='solutions-links'>
           <a href='#'>
             <span>Resturants</span>
-            <img src={CaretRight} alt='' />
+            <img src='./img/svg/caret-right.svg' alt='' />
           </a>
           <a href='#'>
             <span>Hospitality</span>
-            <img src={CaretRight} alt='' />
+            <img src='./img/svg/caret-right.svg' alt='' />
           </a>
           <a href='#'>
             <span>Automotive</span>
-            <img src={CaretRight} alt='' />
+            <img src='./img/svg/caret-right.svg' alt='' />
           </a>
           <a href='#'>
             <span>Healthcare</span>
-            <img src={CaretRight} alt='' />
+            <img src='./img/svg/caret-right.svg' alt='' />
           </a>
           <a href='#'>
             <span>Manufacturing</span>
-            <img src={CaretRight} alt='' />
+            <img src='./img/svg/caret-right.svg' alt='' />
           </a>
           <a href='#'>
             <span>Warehousing</span>
-            <img src={CaretRight} alt='' />
+            <img src='./img/svg/caret-right.svg' alt='' />
           </a>
           <a href='#'>
             <span>Retail</span>
-            <img src={CaretRight} alt='' />
+            <img src='./img/svg/caret-right.svg' alt='' />
           </a>
         </div>
       </div>
@@ -122,23 +120,23 @@ const ResourcesDropdown = () => {
           <div className='resources-links'>
             <a href='#'>
               <span>Blog</span>
-              <img src={CaretRight} alt='' />
+              <img src='./img/svg/caret-right.svg' alt='' />
             </a>
             <a href='#'>
               <span>Webinar</span>
-              <img src={CaretRight} alt='' />
+              <img src='./img/svg/caret-right.svg' alt='' />
             </a>
             <a href='#'>
               <span>Guides</span>
-              <img src={CaretRight} alt='' />
+              <img src='./img/svg/caret-right.svg' alt='' />
             </a>
             <a href='#'>
               <span>Podcast</span>
-              <img src={CaretRight} alt='' />
+              <img src='./img/svg/caret-right.svg' alt='' />
             </a>
             <a href='#'>
               <span> On the Clock Community</span>
-              <img src={CaretRight} alt='' />
+              <img src='./img/svg/caret-right.svg' alt='' />
             </a>
           </div>
         </div>
@@ -147,19 +145,19 @@ const ResourcesDropdown = () => {
           <div className='resources-links'>
             <a href='#'>
               <span>Newsroom</span>
-              <img src={CaretRight} alt='' />
+              <img src='./img/svg/caret-right.svg' alt='' />
             </a>
             <a href='#'>
               <span>Contact Us</span>
-              <img src={CaretRight} alt='' />
+              <img src='./img/svg/caret-right.svg' alt='' />
             </a>
             <a href='#'>
               <span>Docs & Help Center</span>
-              <img src={CaretRight} alt='' />
+              <img src='./img/svg/caret-right.svg' alt='' />
             </a>
             <a href='#'>
               <span>Investors</span>
-              <img src={CaretRight} alt='' />
+              <img src='./img/svg/caret-right.svg' alt='' />
             </a>
           </div>
         </div>
@@ -283,7 +281,7 @@ const FullWidthDropdown = () => {
                 <span>{link.linkName}</span>
                 {link.dropdown && (
                   <span>
-                    <img src={PlusIcon} alt='plus' />
+                    <img src='./img/svg/plus.svg' alt='plus' />
                   </span>
                 )}
               </div>
@@ -295,6 +293,11 @@ const FullWidthDropdown = () => {
             </li>
           );
         })}
+
+        <div className='actions-btns'>
+          <button className='signin-btn'>Sign in</button>
+          <button className='contact-sales-btn'>Contact sales</button>
+        </div>
       </ul>
     </>
   );
