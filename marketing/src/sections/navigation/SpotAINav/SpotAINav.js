@@ -1,7 +1,5 @@
 import React from "react";
 import "./SpotAINav.css";
-import PlusIcon from "../../../assets/svg/plus.svg";
-import MinusIcon from "../../../assets/svg/minus.svg";
 
 const NavChildrenOne = () => {
   return (
@@ -151,7 +149,11 @@ const SpotAINav = () => {
   });
 
   const onExpandSubmenu = (id) => {
-    setSubmenu({ isOpen: !isSubmenu.isOpen, id: id });
+    if (isSubmenu.id === id) {
+      setSubmenu({ isOpen: false, id: "" });
+    } else {
+      setSubmenu({ isOpen: true, id: id });
+    }
   };
 
   const onClickHamburger = () => {
@@ -161,7 +163,9 @@ const SpotAINav = () => {
     <>
       <header>
         <div className='header-content'>
-          <div className='company-logo'>spot.ai</div>
+          <div className='company-logo'>
+            <img src='https://d3v0px0pttie1i.cloudfront.net/uploads/user/logo/25274289/9426278c.png' alt='hundred.dev' />
+          </div>
           <nav className='nav-links'>
             {navLinks.map((link, i) => {
               return (
@@ -190,14 +194,23 @@ const SpotAINav = () => {
           return (
             <a href={link.link} key={i}>
               <div> {link.linkName}</div>
-              {link.dropdown && !isSubmenu.isOpen && <img onClick={() => onExpandSubmenu(link.id)} src={PlusIcon} alt='Iocn' />}
-              {link.dropdown && isSubmenu.isOpen && <img onClick={() => onExpandSubmenu(link.id)} src={MinusIcon} alt='Iocn' />}
+              {link.dropdown && (!isSubmenu.isOpen || isSubmenu.id != link.id) && (isSubmenu.isOpen || isSubmenu.id !== link.id) && (
+                <img onClick={() => onExpandSubmenu(link.id)} src='./img/svg/plus.svg' alt='Iocn' />
+              )}
+              {link.dropdown && isSubmenu.isOpen && isSubmenu.id === link.id && (
+                <img onClick={() => onExpandSubmenu(link.id)} src='./img/svg/minus.svg' alt='Iocn' />
+              )}
               {isSubmenu.id === link.id && (
                 <div className={`submenu ${isSubmenu.isOpen ? "submenu-open" : "submenu-close"}`}> {link.dropdown && link.dropdown}</div>
               )}
             </a>
           );
         })}
+
+        <div className='actions-btns'>
+          <button className='login-btn'>Login</button>
+          <button className='book-demo-btn'>Book a Demo</button>
+        </div>
       </nav>
     </>
   );

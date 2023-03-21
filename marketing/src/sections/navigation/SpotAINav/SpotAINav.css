@@ -30,9 +30,9 @@ header > .header-content {
 /* company logo */
 header .header-content > .company-logo {
   flex-basis: 10%;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--primary-text-color);
+}
+header .header-content > .company-logo img {
+  width: 180px;
 }
 
 /* company logo end */
@@ -354,6 +354,7 @@ header .header-content > .hamburger-open > .slice-1 {
 
   .mobile-links {
     display: block;
+    box-shadow: var(--box-shadow);
   }
 
   .nav-children-one,
@@ -381,4 +382,36 @@ header .header-content > .hamburger-open > .slice-1 {
   .nav-children-three > div:last-child {
     padding-right: 0;
   }
+
+  /* actions btns */
+  .mobile-links > .actions-btns {
+    display: flex;
+    justify-content: center;
+    gap: 0 20px;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .mobile-links > .actions-btns > button {
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .mobile-links > .actions-btns > .login-btn {
+    font-size: 16px;
+    color: var(--primary-text-color);
+    font-weight: 600;
+  }
+  .mobile-links > .actions-btns > .book-demo-btn {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--primary-gradient);
+    padding: 8px 20px;
+    border-radius: var(--border-radius);
+  }
+
+  /* action btns end */
 }
