@@ -161,7 +161,7 @@ const NormalCardNav = () => {
   };
   return (
     <>
-      <header>
+      <header className='simple-cardnav-wrapper'>
         <div className='header-content'>
           <div className='company-logo'>
             <img src='https://d3v0px0pttie1i.cloudfront.net/uploads/user/logo/25274289/9426278c.png' alt='hundred.dev' />
