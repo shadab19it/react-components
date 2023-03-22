@@ -250,7 +250,6 @@ const FullWidthDropdown = () => {
               return (
                 <li key={i} className={`link link-${i}`} onMouseEnter={() => onMouseEnter(link.id)} onMouseLeave={onMouseLeave}>
                   <span>{link.linkName}</span>
-                  {/* <div className={`dropdown-menu `}>{link.dropdown}</div> */}
 
                   {link?.dropdown && (
                     <div className={`dropdown-menu ${isDropdown.id === link.id ? "dropdown-open" : "dropdown-close"}`}>{link.dropdown}</div>
