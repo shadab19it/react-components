@@ -1,8 +1,3 @@
-* {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
-}
-
 :root {
   --box-shadow: 0px 20px 40px rgb(0 0 0/5%);
   --border-color: #eee;
@@ -14,7 +9,7 @@
   --primary-gradient: linear-gradient(90deg, #eb4242, #fc8936);
 }
 
-header {
+.simple-cardnav-wrapper {
   height: 60px;
   padding: 0 20px;
   border-bottom: 1px solid var(--border-color);
@@ -24,7 +19,7 @@ header {
 }
 
 /* header style */
-header > .header-content {
+.simple-cardnav-wrapper > .header-content {
   display: flex;
   align-items: center;
   height: 100%;
@@ -33,17 +28,17 @@ header > .header-content {
 }
 
 /* company logo */
-header .header-content > .company-logo {
+.simple-cardnav-wrapper .header-content > .company-logo {
   flex-basis: 20%;
 }
-header .header-content > .company-logo img {
+.simple-cardnav-wrapper .header-content > .company-logo img {
   width: 160px;
 }
 
 /* company logo end */
 
 /* navigation */
-header > .header-content > nav {
+.simple-cardnav-wrapper > .header-content > .nav-links {
   flex-basis: 60%;
   display: grid;
   height: 100%;
@@ -51,10 +46,10 @@ header > .header-content > nav {
   line-height: 60px;
 }
 
-header > .header-content > nav > a {
+.simple-cardnav-wrapper > .header-content > .nav-links > a {
   text-decoration: none;
   display: inline-block;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   height: 100%;
   text-align: center;
@@ -62,7 +57,7 @@ header > .header-content > nav > a {
   cursor: pointer;
 }
 
-header > .header-content > nav > hr {
+.simple-cardnav-wrapper > .header-content > .nav-links > hr {
   height: 4px;
   width: 100%;
   background-color: #fc8936;
@@ -71,24 +66,24 @@ header > .header-content > nav > hr {
   margin: -6px 0 0 0;
   opacity: 0;
 }
-header > .header-content > nav:hover > hr {
+.simple-cardnav-wrapper > .header-content > .nav-links:hover > hr {
   opacity: 1;
 }
 
-header > .header-content > nav > a:nth-child(2):hover ~ hr {
+.simple-cardnav-wrapper > .header-content > .nav-links > a:nth-child(2):hover ~ hr {
   margin-left: 100%;
 }
-header > .header-content > nav > a:nth-child(3):hover ~ hr {
+.simple-cardnav-wrapper > .header-content > .nav-links > a:nth-child(3):hover ~ hr {
   margin-left: 200%;
 }
-header > .header-content > nav > a:nth-child(4):hover ~ hr {
+.simple-cardnav-wrapper > .header-content > .nav-links > a:nth-child(4):hover ~ hr {
   margin-left: 300%;
 }
-header > .header-content > nav > a:nth-child(5):hover ~ hr {
+.simple-cardnav-wrapper > .header-content > .nav-links > a:nth-child(5):hover ~ hr {
   margin-left: 400%;
 }
 
-header > .header-content > nav > a > .nav-children {
+.simple-cardnav-wrapper > .header-content > .nav-links > a > .nav-children {
   line-height: normal;
   text-align: left;
   position: absolute;
@@ -103,7 +98,7 @@ header > .header-content > nav > a > .nav-children {
   background: #fff;
 }
 
-header > .header-content > nav > a:hover > .nav-children {
+.simple-cardnav-wrapper > .header-content > .nav-links > a:hover > .nav-children {
   visibility: visible;
   transform: translateY(0);
 }
@@ -223,26 +218,26 @@ a {
 /* navigation end */
 
 /* actions btns */
-header > .header-content > .actions-btns {
+.simple-cardnav-wrapper > .header-content > .actions-btns {
   flex-basis: 30%;
   display: flex;
   justify-content: end;
   gap: 0 20px;
 }
 
-header > .header-content > .actions-btns > button {
+.simple-cardnav-wrapper > .header-content > .actions-btns > button {
   outline: none;
   border: none;
   background: transparent;
   cursor: pointer;
 }
 
-header > .header-content > .actions-btns > .login-btn {
+.simple-cardnav-wrapper > .header-content > .actions-btns > .login-btn {
   font-size: 16px;
   color: var(--primary-color);
   font-weight: 600;
 }
-header > .header-content > .actions-btns > .book-demo-btn {
+.simple-cardnav-wrapper > .header-content > .actions-btns > .book-demo-btn {
   font-size: 16px;
   font-weight: 600;
   color: #fff;
@@ -254,7 +249,7 @@ header > .header-content > .actions-btns > .book-demo-btn {
 /* action btns end */
 
 /* hamburger menu */
-header .header-content .hamburger {
+.simple-cardnav-wrapper .header-content .hamburger {
   cursor: pointer;
   grid-template-columns: 1fr;
   padding: 2px;
@@ -262,7 +257,7 @@ header .header-content .hamburger {
   display: none;
 }
 
-header .header-content .hamburger .slice {
+.simple-cardnav-wrapper .header-content .hamburger .slice {
   background: var(--primary-color);
   border-radius: 1px;
   display: inline-block;
@@ -271,20 +266,20 @@ header .header-content .hamburger .slice {
   transition: all 0.4s ease-in-out;
 }
 
-header .header-content .hamburger-close .slice-2 {
+.simple-cardnav-wrapper .header-content .hamburger-close .slice-2 {
   opacity: 1;
   height: 2.5px;
 }
-header .header-content .hamburger-open .slice-2 {
+.simple-cardnav-wrapper .header-content .hamburger-open .slice-2 {
   opacity: 0;
   height: 0;
 }
 
-header .header-content > .hamburger-open > .slice-3 {
+.simple-cardnav-wrapper .header-content > .hamburger-open > .slice-3 {
   transform: rotate(-45deg) translateY(-10px);
 }
 
-header .header-content > .hamburger-open > .slice-1 {
+.simple-cardnav-wrapper .header-content > .hamburger-open > .slice-1 {
   transform: rotate(45deg) translateY(10px);
 }
 /* hamburger-menu end */
@@ -346,18 +341,18 @@ header .header-content > .hamburger-open > .slice-1 {
 /* meadia query */
 
 @media only screen and (max-width: 1024px) {
-  header .header-content {
+  .simple-cardnav-wrapper .header-content {
     justify-content: space-between;
   }
-  header .header-content nav {
+  .simple-cardnav-wrapper .header-content .nav-links {
     display: none;
   }
 
-  header .header-content .actions-btns {
+  .simple-cardnav-wrapper .header-content .actions-btns {
     display: none;
   }
 
-  header .header-content .hamburger {
+  .simple-cardnav-wrapper .header-content .hamburger {
     display: grid;
     place-items: center;
   }
