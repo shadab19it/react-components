@@ -8,8 +8,7 @@ const SimpleCenteredHero = () => {
         Everything you need in <span className={styles.hero_highlight_word}>one place</span>
       </h1>
       <p className={styles.hero_desc}>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae consequuntur id commodi, tempora minus ipsam adipisci distinctio
-        expedita voluptas dolore.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae consequuntur id commodi, tempora minus ipsam.
       </p>
       <div className={styles.hero_action_btns}>
         <button>Get Started</button>
